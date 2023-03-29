@@ -1,0 +1,56 @@
+@import 'variables', 'mixins';
+
+.mce-container.wysiwyg-error {
+    border-color: $c-red !important;
+}
+
+.wysiwyg-content {
+    h1 {
+        @include page-title;
+    }
+    h2 {
+        @include section-title;
+    }
+    h3,
+    h4,
+    h5,
+    h6 {
+        @include section-subtitle;
+    }
+
+    p {
+        @include paragraph;
+    }
+
+    a {
+        color: $c-black;
+    }
+
+    strong,
+    em {
+        font-weight: $weight-bold;
+        font-style: normal;
+    }
+
+    ul,
+    ol {
+        text-align: left;
+    }
+
+    &--no-margin {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin-bottom: 0;
+        }
+    }
+
+    &--getting-started {
+        a {
+            color: $base-font-color;
+        }
+    }
+}

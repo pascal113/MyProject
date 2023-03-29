@@ -1,0 +1,125 @@
+/* Header */
+.logo-bbc {
+    width: 9rem;
+}
+.doc-header {
+    background: $c-white;
+    border-bottom: 1px solid $base-border-color;
+    position: fixed;
+    width: 100%;
+    transition: all 0.2s ease-in-out;
+    top: 0;
+    z-index: 999;
+    &__top {
+        height: 10rem;
+        display: flex;
+        transition: all 0.2s ease-in-out;
+        justify-content: space-between;
+        > div {
+            width: 10%;
+            &:first-child,
+            &:last-child {
+                width: 45%;
+                // ie11 hack
+                @media all and (-ms-high-contrast: none) {
+                    width: auto;
+                }
+            }
+        }
+        .column {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .logo-bbc {
+                @include large {
+                    // ie11 hack to center logo
+                    @media all and (-ms-high-contrast: none) {
+                        margin-left: 180px;
+                    }
+                }
+            }
+            .header-left {
+                margin-right: auto;
+                display: flex;
+                align-items: center;
+                padding-left: 2rem;
+            }
+            .header-right {
+                margin-left: auto;
+                align-items: center;
+                padding-right: 2rem;
+                display: flex;
+                .desktop-only {
+                    display: none;
+                    @include large {
+                        margin-left: auto;
+                        display: flex;
+                        align-items: center;
+                    }
+                }
+            }
+        }
+    }
+    &.scrolling {
+        .doc-header__top {
+            height: 6.5rem;
+        }
+    }
+    &.hidden {
+        margin-top: -10rem;
+    }
+}
+body.nav-open {
+    position: fixed;
+    overflow: hidden;
+    .main-nav-wrap {
+        height: calc(100vh - 10rem);
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: column;
+        -webkit-overflow-scrolling: touch;
+    }
+    .doc-header__top {
+        height: 10rem;
+    }
+}
+.cart-wrap {
+    @include large {
+        display: inline-block;
+    }
+}
+.cart {
+    font-size: 14px;
+    display: inline-block;
+    text-align: center;
+    padding-top: 14px;
+    padding-left: 9px;
+    text-decoration: none;
+    width: 51px;
+    height: 49px;
+    background-image: url(/images/icon-shopping-cart.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.num-cart-items {
+    will-change: width, height, padding-top, font-size;
+    transition: width 0.2s $base-timing, height 0.2s $base-timing, padding-top 0.2s $base-timing,
+        font-size 0.2s $base-timing;
+
+    &--highlighted {
+        font-size: 2.1rem;
+        color: #89aa26 !important;
+
+        width: 73px;
+        height: 63px;
+        padding-top: 15px;
+        padding-left: 13px;
+        @include medium-or-less {
+            width: 67px;
+            height: 57px;
+            padding-top: 13px;
+            padding-left: 12px;
+        }
+    }
+}

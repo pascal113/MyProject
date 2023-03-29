@@ -1,0 +1,42 @@
+.is-logged-in {
+    @include medium-or-less {
+        .block-sign-in {
+            .icon-link--hi {
+                border-right: none;
+            }
+            &__status {
+                display: block;
+                margin-bottom: 5px;
+            }
+        }
+    }
+}
+.block-sign-in {
+    display: flex;
+    align-items: center;
+    &__status {
+        display: inline-block;
+        form {
+            display: inline-block;
+        }
+    }
+    .icon-link--border-right {
+        border-right: 1px solid $base-border-color;
+        padding-right: 1.5rem;
+        margin-right: 1rem;
+    }
+    .icon-link--hi {
+        border: none;
+        border-right: 1px solid $base-border-color;
+        padding-right: 1.5rem;
+        margin-right: 1rem;
+        background: none;
+    }
+    .icon-link--pin {
+        @include large {
+            border-right: 1px solid $base-border-color;
+            padding-right: 1.5rem;
+            margin-right: 1rem;
+        }
+    }
+}

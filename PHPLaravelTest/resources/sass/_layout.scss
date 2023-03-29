@@ -1,0 +1,246 @@
+/* Layout */
+
+/* Flex column to keep footer bottom */
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    &.fixed-header {
+        padding-top: 10rem;
+    }
+}
+
+.hide {
+    display: none;
+}
+
+.wrapper {
+    @include wrapper;
+    &--blue {
+        background: $c-blue-bgr;
+    }
+    &--tan {
+        background: $c-tan-bgr;
+    }
+    &--green {
+        background: $c-green-bgr;
+    }
+    &--gray {
+        background: $c-gray-bgr;
+    }
+    &--wash {
+        background: transparent url(/images/bgr-wash.jpg) no-repeat;
+        background-size: cover;
+    }
+    &--bordered {
+        border-bottom: 1px solid $base-border-color;
+        border-top: 1px solid $base-border-color;
+    }
+    &--border-bottom {
+        border-bottom: 1px solid $base-border-color;
+    }
+}
+.section {
+    @include container;
+    &--xl {
+        max-width: $width-xl;
+    }
+
+    .recognition-and-support-wysiwyg-container {
+        h3 {
+            font-size: 2.6rem;
+            letter-spacing: 0.25rem;
+            font-weight: 500;
+        }
+    }
+}
+
+.full-height {
+    height: 100vh;
+}
+
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.position-rel {
+    position: relative;
+}
+
+.section-row {
+    margin: auto;
+    position: relative;
+    &--top {
+        padding-top: $section-spacing/2;
+        padding-bottom: $section-spacing/2;
+    }
+    &--padded {
+        padding-top: $section-spacing;
+        padding-bottom: $section-spacing;
+    }
+    &--padded-top {
+        padding-top: $section-spacing;
+    }
+    &--padded-bottom {
+        padding-bottom: $section-spacing;
+    }
+    &--margined {
+        margin-top: $section-spacing;
+        margin-bottom: $section-spacing;
+    }
+    &--margined-top {
+        margin-top: $section-spacing;
+    }
+    &--margined-bottom {
+        margin-bottom: $section-spacing;
+    }
+    &--center {
+        text-align: center;
+        ul,
+        ol {
+            text-align: left;
+        }
+    }
+    &--left {
+        text-align: left;
+    }
+    &--xsm {
+        max-width: $width-xsmall;
+    }
+    &--sm {
+        max-width: $width-small;
+    }
+}
+
+.section-cart-buttons {
+    .pull-left {
+        float: left;
+    }
+    .pull-right {
+        float: right;
+    }
+}
+
+.card--product {
+    background: $c-gray-bgr;
+    border: 1px solid $base-border-color;
+    margin-bottom: $base-spacing;
+    padding: $base-spacing;
+    max-width: 33.3rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.card--highlight {
+    background-color: $c-blue-bgr;
+    margin-bottom: $base-spacing;
+    padding: $base-spacing;
+}
+
+.flex-cards {
+    &--4 {
+        .flex-row {
+            flex-wrap: wrap;
+            display: flex;
+            flex-direction: row;
+            &__col {
+                width: 21.8rem;
+                flex: none;
+                margin: auto;
+            }
+        }
+    }
+}
+.cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 -$base-spacing/2;
+    .card {
+        background: $c-white;
+        border: 1px solid $base-border-color;
+        margin-bottom: $base-spacing;
+        padding: $base-spacing;
+        display: flex;
+        flex-direction: column;
+        .button,
+        .button-row {
+            margin-top: auto;
+        }
+        &--center {
+            text-align: center;
+        }
+    }
+    &--three {
+        .card {
+            max-width: 33.3rem;
+            // Hack to fix wonky flexbox in ie11
+            @media all and (-ms-high-contrast: none) {
+                width: 33.3rem;
+            }
+        }
+    }
+    &--gray {
+        .card {
+            background: $c-gray-bgr;
+        }
+    }
+    @include medium {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch;
+        .card {
+            margin: $base-spacing/2;
+        }
+    }
+}
+
+.flex-row {
+    &__col {
+        margin: $base-spacing/2 0;
+    }
+    &--has-margin {
+        margin-bottom: $base-spacing;
+    }
+    @include large {
+        display: flex;
+        justify-content: center;
+        margin-left: -$base-spacing/2;
+        margin-right: -$base-spacing/2;
+        &__col {
+            margin: 0 $base-spacing/2;
+            flex: 1;
+        }
+        &--left-align {
+            justify-content: flex-start;
+        }
+    }
+}
+
+.row-img-left {
+    > div {
+        &:first-child {
+            img {
+                max-width: 30.8rem;
+                display: block;
+                margin-bottom: $base-spacing;
+                &.heart-bear {
+                    max-width: 24.2rem;
+                }
+            }
+        }
+    }
+    @include large {
+        display: flex;
+        > div {
+            width: 66.66%;
+            &:first-child {
+                width: 33.33%;
+                padding-right: $base-spacing * 2;
+            }
+        }
+    }
+}

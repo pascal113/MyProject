@@ -1,0 +1,11 @@
+.block-page-intro {
+    padding: $section-spacing $base-spacing;
+    &__content {
+        margin: auto;
+        max-width: 68rem;
+        text-align: center;
+        p.page-intro:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

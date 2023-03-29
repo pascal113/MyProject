@@ -1,0 +1,221 @@
+@import 'variables', 'normalize', 'mixins', 'forms';
+body {
+    font-family: $base-font-family;
+}
+div#header {
+    border-bottom: 1px solid $base-border-color !important;
+    text-align: center;
+    margin-bottom: 20px;
+    h1 {
+        font-size: 0;
+    }
+    img {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 90px;
+    }
+}
+div#document {
+    padding: 10px 0;
+    margin-top: 0;
+    width: auto;
+}
+#footer {
+    @include large {
+        max-width: 720px;
+        margin: 0 auto !important;
+        margin-top: 10px !important;
+        display: flex;
+        justify-content: center;
+    }
+}
+div.powered {
+    margin-right: 20px;
+}
+.total_row {
+    margin-top: 0;
+}
+#cc.custom_form {
+    width: 100%;
+    max-width: 720px;
+}
+div#order {
+    padding-bottom: 0;
+}
+div#secure {
+    p {
+        font-size: 16px;
+    }
+}
+#receipt_link_form {
+    text-align: center !important;
+}
+p#progress-indicator {
+    padding-top: 0 !important;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+}
+#content {
+    line-height: 1.25 !important;
+    padding: 0 20px;
+    h1 {
+        font-size: 22px;
+        letter-spacing: 0.15rem;
+        font-weight: 500;
+        line-height: 1.25 !important;
+        margin-bottom: 5px;
+    }
+    h2 {
+        font-size: 18px !important;
+        font-weight: 400 !important;
+        text-align: center;
+    }
+    #receiptsubmitlink {
+        font-family: $base-font-family !important;
+        color: #000 !important;
+        font-size: 18px;
+        float: none;
+    }
+    label {
+        font-size: 18px;
+        margin-bottom: 3px;
+    }
+    p {
+        font-size: 18px;
+    }
+    input[type='radio'] {
+        margin-left: 0.2rem;
+    }
+    .total_currency {
+        display: none !important;
+    }
+    .total_label,
+    .total_value {
+        min-width: auto !important;
+    }
+    .total_value:before {
+        content: '$';
+    }
+    div.custom_field_row:nth-child(4) {
+        img {
+            display: none;
+        }
+    }
+    #cc .cvv_help {
+        width: auto !important;
+    }
+    #cvv2_section {
+        p {
+            margin-bottom: 0;
+        }
+    }
+    @include large {
+        max-width: 720px;
+        margin: auto;
+        h1 {
+            font-size: 26px;
+        }
+        p {
+            font-size: 20px;
+        }
+        label {
+            font-size: 20px;
+        }
+        div.custom_field_row:nth-child(3) {
+            width: 49%;
+            float: left;
+            margin-bottom: 0;
+        }
+        div.custom_field_row:nth-child(4) {
+            width: 49%;
+            float: right;
+            margin-bottom: 0;
+        }
+        div.custom_field_row:last-of-type label {
+            color: #cc0000;
+        }
+    }
+}
+p {
+    @include large {
+        max-width: 720px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+.custom_field,
+.custom_field input {
+    select {
+        margin-top: 5px;
+    }
+}
+div.custom_field_row div.custom_field {
+    width: 100%;
+}
+div.pay-option {
+    width: 100%;
+    background: #fff;
+    border: none;
+}
+input[type='color'],
+input[type='date'],
+input[type='datetime'],
+input[type='datetime-local'],
+input[type='email'],
+input[type='month'],
+input[type='number'],
+input[type='password'],
+input[type='search'],
+input[type='tel'],
+input[type='text'],
+input[type='time'],
+input[type='url'],
+input[type='week'],
+input:not([type]),
+textarea,
+select[multiple='multiple'] {
+    padding: 10px;
+}
+.custom_form {
+    input[type='text'] {
+        margin-bottom: 0.25rem;
+        font-size: 20px;
+    }
+    select#cvd_presence_ind {
+        display: none;
+    }
+    input[type='submit'] {
+        appearance: none;
+        background: $button-color;
+        border: 0;
+        border-radius: $base-border-radius;
+        color: #fff;
+        cursor: pointer;
+        display: inline-block;
+        font-family: $base-font-family;
+        font-size: 20px;
+        -webkit-font-smoothing: antialiased;
+        font-weight: $weight-regular;
+        line-height: 1;
+        padding: 0 20px;
+        text-decoration: none;
+        transition: background-color $base-duration $base-timing;
+        user-select: none;
+        vertical-align: middle;
+        white-space: nowrap;
+        text-align: center;
+        height: 46px;
+        &:hover,
+        &:focus {
+            //background-color: shade($action-color, 20%);
+            color: #fff;
+        }
+
+        &:disabled {
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+    }
+}

@@ -1,0 +1,39 @@
+/* Base */
+:root {
+    font-size: 56.25%;
+    @include medium {
+        font-size: 62.5%;
+    }
+    body {
+        // Body font size 16px
+        font-size: 1.6rem;
+        font-family: $base-font-family;
+        line-height: 1.25;
+    }
+}
+html {
+    box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+hr {
+    border: 0;
+    height: 0;
+    border-top: 2px solid $base-border-color;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    margin: 2.5rem 0;
+    &.blue-divider {
+        border-top: 2px solid #b4cdd8;
+        margin: 2.5rem 0;
+    }
+    &.section-below {
+        margin-bottom: $section-spacing;
+    }
+}

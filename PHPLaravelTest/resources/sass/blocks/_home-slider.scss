@@ -1,0 +1,71 @@
+// Hide slider until initilized
+
+.js-home-slide {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease;
+    -webkit-transition: opacity 1s ease;
+}
+.js-home-slide.slick-initialized {
+    visibility: visible;
+    opacity: 1;
+}
+
+// Home Slider
+.block-home-slider {
+    display: none;
+    &.slick-initialized {
+        display: block;
+    }
+}
+.home-slide {
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 0 $base-spacing;
+    &__content-wrap {
+        min-height: 60rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 2rem;
+        max-width: 60rem;
+        margin: auto;
+        text-align: center;
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 2rem;
+        max-width: 60rem;
+        margin: auto;
+        text-align: center;
+        .img-washgreen {
+            max-width: 30rem;
+        }
+        .button {
+            margin-top: $base-spacing * 2;
+        }
+    }
+}
+.slick-dotted.slick-slider {
+    margin-bottom: 0;
+}
+// Custom Dots
+.slick-dots li.slick-active button:before {
+    opacity: 1;
+}
+.slick-dots li button:before {
+    color: $c-blue-dark;
+}
+.slick-dots {
+    bottom: 2rem;
+}
+.slick-dots li button:before {
+    font-size: 1.35rem;
+}
+.slick-dots li.slick-active button:before {
+    color: $c-white;
+}

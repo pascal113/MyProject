@@ -1,0 +1,19 @@
+#note remove all hashtag-comment lines from example
+#this file should be renamed to  supervisor  and placed in the /etc/logrotate.d  directory
+#as long as /etc/logrotate.conf file contains 'include /etc/logrotate.d' the above is all that is necessary
+
+/var/log/supervisor/*.log {
+    missingok
+    weekly
+    notifempty
+    nocompress
+}
+
+[path to repository root]/storage/logs/_worker.log {
+    daily
+    maxage 7
+    dateext
+    dateformat -%Y-%m-%d
+    extension .log
+    create 644 www-data www-data
+}

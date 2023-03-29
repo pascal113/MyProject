@@ -1,0 +1,9 @@
+.block-social-icons {
+    display: flex;
+    justify-content: space-between;
+    max-width: 285px;
+    width: 100%;
+    .social-icon {
+        margin-left: 0.5rem;
+    }
+}

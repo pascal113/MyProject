@@ -1,0 +1,30 @@
+/* Loading indicator */
+
+.loading-indicator {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    vertical-align: bottom;
+
+    &.centered {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    &.loading {
+        background-image: url(/images/loading.gif);
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+    &__dark-bg {
+        &.loading {
+            background-image: url(/images/loading-dark-bg.gif);
+        }
+    }
+
+    &__small {
+        width: 30px;
+        height: 30px;
+    }
+}

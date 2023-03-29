@@ -1,0 +1,125 @@
+@import 'variables', 'popups', 'wysiwyg';
+
+@import '/node_modules/featherlight/release/featherlight.min.css';
+
+/* Admin Overrides */
+#toast-container > div {
+    width: 600px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.voyager {
+    .modal-order-status {
+        .btn {
+            &.btn-warning {
+                background-color: #fabe28;
+            }
+        }
+    }
+    .btn {
+        &.btn-primary {
+            background-color: #004b8d;
+        }
+        &.btn-warning {
+            background-color: #2e99cf;
+        }
+    }
+}
+
+.voyager {
+    .edit-add {
+        > {
+            * {
+                color: $c-black;
+                font-family: $base-font-family;
+            }
+            .btn {
+                color: $c-white;
+                font-size: 15px;
+            }
+
+            h1 {
+                font-size: 33px;
+            }
+            h2 {
+                font-weight: bold;
+            }
+            h4 {
+                font-size: 20px;
+            }
+        }
+
+        .form-group {
+            padding-left: 0;
+            padding-right: 0;
+
+            label {
+                font-size: 16px;
+                font-weight: 500;
+            }
+
+            .form-control {
+                color: $c-black;
+                font-family: $base-font-family;
+                font-weight: 300;
+            }
+        }
+
+        .media-picker .file_link i.icon::before {
+            color: $c-gray;
+        }
+    }
+}
+
+.form-search #filters {
+    padding: 1px;
+    padding-bottom: 10px;
+    border: solid 1px #eaeaf1;
+    border-bottom: none;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    background-color: #fff;
+    display: flex;
+    label {
+        margin-top: 5px;
+    }
+    button {
+        margin: 2px 0 2px 0;
+        background: none;
+        box-shadow: none;
+        border: 0;
+        color: #999;
+        padding: 25px 10px 25px 10px;
+        border-left: solid 1px #eee;
+        right: 20px;
+        z-index: 9;
+        &:hover {
+            border: 0;
+            box-shadow: none;
+            color: #777;
+            border-left: solid 1px #ddd;
+        }
+    }
+}
+
+#search-input {
+    &.has-filters {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    .input-group-btn {
+        width: auto;
+        position: static;
+
+        > .btn {
+            position: static;
+            margin: 0;
+            border: none;
+            padding: 7px 10px;
+            background-color: $c-blue-dark;
+            color: $c-white;
+        }
+    }
+}

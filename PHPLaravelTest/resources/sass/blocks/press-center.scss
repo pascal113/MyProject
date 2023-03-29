@@ -1,0 +1,9 @@
+.block-press-center {
+    &__content {
+        padding-top: $section-spacing;
+        padding-bottom: $section-spacing;
+        margin: auto;
+        text-align: center;
+        max-width: $width-small;
+    }
+}

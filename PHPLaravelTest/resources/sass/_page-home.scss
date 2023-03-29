@@ -1,0 +1,27 @@
+/* Home */
+.bgr-color {
+    background-color: red;
+}
+.map-with-pin {
+    border: 1px solid $base-border-color;
+    position: relative;
+    max-width: 33.8rem;
+    margin: $base-spacing auto;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+    .icon-link {
+        position: absolute;
+        top: 16%;
+        left: 40%;
+    }
+    &__map {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
+img.has-border {
+    border: 1px solid $base-border-color;
+    margin-bottom: $base-spacing;
+}

@@ -1,0 +1,64 @@
+<mjml>
+
+  <mj-head>
+    <mj-include path="./partials/styles.mjml" />
+  </mj-head>
+
+  <mj-body background-color="#fff">
+
+    <mj-section background-color="#fff" padding="0">
+
+      <mj-column padding="0">
+        <mj-image padding="0" width="600px" src="{{ asset('/images/email/header-order-on-way.png') }}" alt="Brown Bear Car Wash" />
+      </mj-column>
+
+    </mj-section>
+
+    <mj-section background-color="#fff" padding-bottom="0">
+      <mj-column width="600px">
+        <mj-include path="./partials/hello.mjml" />
+        <mj-text>
+          Good news! Your order is on the way. It will arrive soon. Your order details are below.</mj-text>
+        <mj-text font-size="20px" font-weight="bold">Here are the details:</mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-include path="./partials/order-details.mjml" />
+
+    <mj-section background-color="#fff" padding-bottom="0" padding-top="0">
+      <mj-column width="600px">
+        <mj-text padding-bottom="0">
+          <h3 style="color:#004b8d;font-size:22px;">Questions?</h3>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#fff" padding-bottom="0" padding-top="0">
+      <mj-column width="280px" background-color="#d9f3fd" border="5px solid #fff">
+        <mj-image width="50px" padding-bottom="0" src="{{ asset('/images/email/icon-order.png') }}" />
+        <mj-text align="center" height="50px" padding-bottom="0">
+        	<a style="text-decoration:none;font-size:18px;font-weight:bold;color:#004b8d;" href="{{ route('my-account.orders.show', [$order->id]) }}">View Order Details</a>
+        </mj-text>
+      </mj-column>
+      <mj-column width="280px" background-color="#d9f3fd" border="5px solid #fff">
+        <mj-image padding-bottom="0" width="50px" height="50px" src="{{ asset('/images/email/icon-website.png') }}" />
+        <mj-text align="center" height="50px" padding-bottom="0">
+        <a href="{{ url('/') }}" style="text-decoration:none;font-size:18px;font-weight:bold;color:#004b8d;">Visit Our Website</a>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#fff" padding-bottom="0" padding-top="0">
+      <mj-column width="280px" background-color="#d9f3fd" border="5px solid #fff">
+        <mj-image padding-bottom="0" width="50px" height="50px" src="{{ asset('/images/email/icon-email.png') }}" />
+        <mj-text align="center" height="40px" padding-bottom="0"><a href="mailto:{{ config('mail.contact.address') }}" style="text-decoration:none;font-size:18px;font-weight:bold;color:#004b8d;">Email a Question</a></mj-text>
+      </mj-column>
+      <mj-column width="280px" background-color="#d9f3fd" border="5px solid #fff">
+        <mj-image padding-bottom="0" width="50px"  height="50px" src="{{ asset('/images/email/icon-phone.png') }}" />
+        <mj-text align="center" height="40px" padding-bottom="0"><a href="tel:2067893700" style="text-decoration:none;font-size:18px;font-weight:bold;color:#004b8d;">Give Us A Call</a></mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-include path="./partials/contact-info-html.mjml" />
+    <mj-include path="./partials/footer.mjml" />
+
+  </mj-body>
+
+</mjml>

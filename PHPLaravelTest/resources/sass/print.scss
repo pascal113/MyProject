@@ -1,0 +1,17 @@
+@import 'variables', 'normalize', 'mixins', 'base', 'typography', 'icons', 'layout',
+    // SCREENS
+        'order-invoice';
+
+img.print-header {
+    display: block;
+    width: 800px;
+    max-width: none;
+    height: 100px;
+    margin: 10px 10px 30px 10px;
+}
+
+main {
+    width: 800px;
+    box-sizing: content-box;
+    padding: 10px;
+}

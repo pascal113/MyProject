@@ -1,0 +1,7 @@
+<mj-section background-color="#004b8d" padding-top="5px" padding-bottom="5px">
+
+  <mj-column padding="0">
+    <mj-image padding="0" width="50px" src="{{ asset('/images/email/logo-bear.png') }}" alt="Brown Bear Car Wash" />
+  </mj-column>
+
+</mj-section>

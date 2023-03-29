@@ -1,0 +1,99 @@
+<mjml>
+
+  <mj-head>
+    <mj-include path="./partials/styles.mjml" />
+  </mj-head>
+
+  <mj-body background-color="#fff">
+
+    <mj-section background-color="#fff" padding="0">
+
+      <mj-column padding="0">
+        <mj-image padding="0" width="600px" src="{{ asset('/images/email/header-wash-club-certificate.png') }}" alt="Brown Bear Car Wash Unlimited Washes" />
+      </mj-column>
+
+    </mj-section>
+
+    <mj-section background-color="#fff" padding-bottom="0">
+      <mj-column width="600px">
+        <mj-raw>@if ($washClub->data->is_gift ?? null)</mj-raw>
+            <mj-text>
+                <h2 style="font-size:24px;margin-bottom:0;">
+                    Hello -
+                </h2>
+            </mj-text>
+        <mj-raw>@else</mj-raw>
+            <mj-include path="./partials/hello.mjml" />
+        <mj-raw>@endif</mj-raw>
+        <mj-clear-php />
+        <mj-text>
+          Congratulations! You are the recipient of an Unlimited Wash Club Membership! Simply bring this email to your nearest Brown Bear Car Wash tunnel location to activate your new membership.</mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#fff" padding-bottom="0">
+      <mj-column width="600px">
+        <mj-text align="center" padding-bottom="30px">
+            <h2 style="color:#094d8d;font-size:28px;margin-bottom:0;line-height:normal;margin-top:0;">
+                {{ $washClub->data->club->display_name_with_term ?? '' }} Membership
+            </h2>
+        </mj-text>
+
+        <mj-raw>@if ($washClub->data->purchase->one_time_wash_code ?? null)</mj-raw>
+            <mj-text align="center">
+                <h3>Initial Wash Barcode</h3>
+            </mj-text>
+
+            <mj-image padding="0" width="100px" src="{{ $washClub->data->purchase->one_time_wash_barcode_url }}" alt="One Time Wash Code" />
+            <mj-text font-size="14px" align="center">
+                {{ $washClub->data->purchase->one_time_wash_code }}
+            </mj-text>
+
+            <mj-text padding-bottom="30px">
+                <p>Scan this barcode for your initial wash before your account is activated.{{ $washClub->data->purchase->one_time_wash_code_expires_at ? ' This code expires on '.\Carbon\Carbon::parse($washClub->data->purchase->one_time_wash_code_expires_at)->format(config('format.date')).'.' : '' }}</p>
+            </mj-text>
+        <mj-raw>@endif</mj-raw>
+        <mj-clear-php />
+
+        <mj-text align="center">
+            <h3>Activation Code</h3>
+        </mj-text>
+        <mj-raw>@if ($washClub->data->is_gift ?? null)</mj-raw>
+            <mj-image padding="0" width="140px" src="{{ $washClub->data->qr_code_url }}" alt="QR Code" />
+        <mj-raw>@else</mj-raw>
+            <mj-image padding="0" width="140px" src="{{ $washClub->data->qr_code_url }}" href="{{ route('my-account.memberships.show', [ 'id' => $washClub->data->purchase->id ]) }}" alt="QR Code" />
+        <mj-raw>@endif</mj-raw>
+        <mj-clear-php />
+        <mj-text font-size="14px" align="center">
+            {{ $washClub->data->redemption_code }}
+        </mj-text>
+        <mj-raw>@if (!($washClub->data->is_gift ?? null))</mj-raw>
+            <mj-text font-size="14px" align="center">
+                Email: {{ $user->masked_email }}
+            </mj-text>
+        <mj-raw>@endif</mj-raw>
+      </mj-column>
+    </mj-section>
+    <mj-raw>@if (!($washClub->data->is_gift ?? null))</mj-raw>
+      <mj-section background-color="#fff" padding-bottom="0">
+        <mj-column width="600px">
+          <mj-text align="center">
+            <a class="link-black" href="{{ $washClub->data->certificate_url }}">Download a PDF certificate</a>
+          </mj-text>
+        </mj-column>
+      </mj-section>
+    <mj-raw>@endif</mj-raw>
+    <mj-clear-php />
+    <mj-section background-color="#fff" padding-bottom="0">
+      <mj-column width="600px">
+        <mj-text>
+          Attendant will scan this QR code to complete the activation process after your initial wash. <a class="link-black" href="{{ url(cms_route('locations')) }}">{{ url(cms_route('locations')) }}</a>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-include path="./partials/contact-info-html.mjml" />
+    <mj-include path="./partials/footer.mjml" />
+
+  </mj-body>
+
+</mjml>

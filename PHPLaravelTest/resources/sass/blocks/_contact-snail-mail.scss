@@ -1,0 +1,10 @@
+.block-contact-snail-mail {
+    border-top: 2px solid $base-border-color;
+    max-width: $width-xsmall;
+    margin: $base-spacing auto;
+    padding-top: $section-spacing;
+    p {
+        font-size: 3.2rem;
+        font-weight: $weight-light;
+    }
+}

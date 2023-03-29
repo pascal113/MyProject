@@ -1,0 +1,60 @@
+.block-expandable-section {
+    text-align: left;
+    border-bottom: 2px solid $base-border-color;
+    h3 {
+        font-size: 2.2rem;
+    }
+    ul {
+        li {
+            margin-bottom: 0.5rem;
+        }
+    }
+    &__section {
+        cursor: pointer;
+        color: $c-blue-dark;
+        padding-top: $base-spacing;
+        border-top: 2px solid $base-border-color;
+    }
+    .section-trigger {
+        position: relative;
+        padding-right: 3rem;
+        &:before {
+            content: '\002B';
+            color: $c-blue-dark;
+            position: absolute;
+            right: 0;
+            top: 2rem;
+            width: 15px;
+            height: 15px;
+        }
+        &.is-active {
+            &:before {
+                content: '\2212';
+            }
+        }
+    }
+    .section-content {
+        display: none;
+        &.is-active {
+            display: block;
+        }
+        > div {
+            margin-bottom: $base-spacing;
+        }
+        a {
+            color: $base-font-color;
+        }
+        a.button {
+            color: $c-white;
+        }
+    }
+    .read-more {
+        font-size: $base-font-size;
+        font-weight: $weight-bold;
+    }
+    &--files {
+        h3 {
+            font-size: 2.6rem;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+.block-ask-a-question {
+    padding-left: $base-spacing;
+    padding-right: $base-spacing;
+    &__content {
+        padding-top: $section-spacing;
+        padding-bottom: $section-spacing;
+        margin: auto;
+        text-align: center;
+        max-width: $width-small;
+    }
+    &.bgr-grey {
+        background: $c-gray-bgr;
+    }
+    .question-bear {
+        max-width: 18.4rem;
+        margin-bottom: $base-spacing;
+    }
+    .button {
+        width: 100%;
+        max-width: 36rem;
+    }
+}

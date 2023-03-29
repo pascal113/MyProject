@@ -1,0 +1,212 @@
+// HTML
+
+h1,
+h2,
+h3 {
+    margin-top: 0;
+    margin-bottom: $base-spacing;
+}
+
+#document {
+    width: auto;
+    background-color: #fff;
+
+    #order {
+        .total_row {
+            /*
+            font-size: 16px;
+            font-weight: normal;
+*/
+        }
+    }
+}
+/*
+input[type=submit] {
+    border: solid 3px #000;
+}
+*/
+
+p {
+    @include paragraph;
+}
+a,
+.a {
+    &:link,
+    &:visited {
+        color: $c-blue-dark;
+    }
+}
+button.a {
+    color: $c-blue-dark;
+    cursor: pointer;
+    line-height: 22.5px;
+    background: none;
+    border: none;
+}
+dl {
+    font-size: $base-font-size;
+    dt {
+        font-weight: $weight-bold;
+    }
+    dd {
+        margin-left: 0;
+    }
+    &.no-margin {
+        margin: 0;
+    }
+}
+
+// Classes
+
+.promo {
+    color: $c-blue-dark;
+    font-size: 4.4rem;
+    font-weight: $weight-bold;
+    letter-spacing: 0.1rem;
+}
+.page-title {
+    @include page-title;
+
+    &--no-margin {
+        margin-bottom: 0;
+    }
+}
+.section-title {
+    @include section-title;
+
+    &--margin-top {
+        margin-top: $base-spacing;
+    }
+    &--no-margin {
+        margin-bottom: 0;
+    }
+    &--section-margin {
+        margin-bottom: $section-spacing;
+    }
+    &--section-margin-top {
+        margin-top: $section-spacing;
+    }
+}
+.section-subtitle {
+    @include section-subtitle;
+
+    &--margin-top {
+        margin: $base-spacing 0;
+    }
+    &--no-margin {
+        margin-bottom: 0;
+    }
+    &--underline {
+        text-decoration: underline;
+    }
+}
+.page-intro {
+    font-size: 2.4rem;
+    &--large {
+        font-size: 2.8rem;
+    }
+    p {
+        font-size: 2.4rem;
+    }
+}
+.section-intro {
+    font-size: 2.2rem;
+    &--bold {
+        letter-spacing: $base-letter-spacing;
+        font-weight: $weight-medium;
+    }
+    a {
+        color: $base-font-color;
+    }
+    p {
+        font-size: 2.2rem;
+    }
+}
+.checkout-question {
+    font-size: 2.4rem;
+    font-weight: $weight-bold;
+}
+.product-description {
+    font-size: 1.8rem;
+}
+.product-title {
+    font-size: 2.2rem;
+    font-weight: $weight-bold;
+}
+.service-label {
+    font-size: 1.8rem;
+}
+.form-label {
+    font-size: 2rem;
+}
+.pull-quote {
+    color: $c-blue-light;
+    font-size: 2.8rem;
+    &--green {
+        color: $c-green;
+    }
+}
+.label-style {
+    font-size: 2rem;
+    font-weight: $weight-bold;
+}
+.font-size {
+    &--16 {
+        font-size: 1.6rem;
+    }
+    &--18 {
+        font-size: 1.8rem;
+    }
+    &--20 {
+        font-size: 2rem;
+    }
+    &--22 {
+        font-size: 2.2rem;
+    }
+    &--24 {
+        font-size: 2.4rem;
+    }
+    &--26 {
+        font-size: 2.6rem;
+    }
+}
+.font-color {
+    &--black {
+        color: $c-black;
+    }
+    &--white {
+        color: $c-white;
+    }
+    &--gray {
+        color: $c-gray;
+    }
+    &--gray-light {
+        color: $c-gray-light;
+    }
+    &--gray-medium {
+        color: $c-gray-medium;
+    }
+    &--blue-dark {
+        color: $c-blue-dark;
+    }
+    &--blue-light {
+        color: $c-blue-light;
+    }
+    &--green {
+        color: $c-green;
+    }
+    &--green-dark {
+        color: $c-green-dark;
+    }
+    &--red {
+        color: $c-red;
+    }
+    &--orange {
+        color: $c-orange;
+    }
+}
+.contact-large,
+.contact-large p {
+    font-size: 3.2rem;
+    font-weight: $weight-light;
+}

@@ -1,0 +1,6 @@
+*
+!.gitignore
+!users/
+users/*
+!users/default.png
+!users/fpcs.png

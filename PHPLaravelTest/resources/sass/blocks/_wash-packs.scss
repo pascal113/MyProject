@@ -1,0 +1,29 @@
+.block-wash-packs {
+    .section-intro {
+        margin: $base-spacing 0 0 0;
+    }
+    .product-description {
+        margin-bottom: $base-spacing;
+    }
+    .product-cost {
+        font-size: 1.8rem;
+        font-weight: $weight-bold;
+        margin-bottom: $base-spacing;
+        &__unit {
+            color: $c-gray-medium;
+            font-weight: $weight-regular;
+        }
+    }
+    .product-quantity {
+        margin-bottom: $base-spacing;
+        select {
+            display: inline-block;
+        }
+        label {
+            font-size: 18px;
+            font-weight: $weight-regular;
+            display: inline-block;
+            margin-right: 5px;
+        }
+    }
+}

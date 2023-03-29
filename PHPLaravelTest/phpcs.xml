@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<ruleset name="FPCS">
+    <rule ref="vendor/fpcs/php-coding-standard/phpcs/base.xml" />
+    <rule ref="vendor/fpcs/php-coding-standard/phpcs/laravel.xml" />
+</ruleset>

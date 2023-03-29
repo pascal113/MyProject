@@ -1,0 +1,10 @@
+[program:brownbear.com]
+process_name=%(program_name)s_%(process_num)02d
+command=php [path to repository root]/artisan queue:work --sleep=3 --tries=3
+autostart=true
+autorestart=true
+restarttries=5
+user=www-data
+numprocs=4
+redirect_stderr=true
+stdout_logfile=[path to repository root]/storage/logs/_worker.log

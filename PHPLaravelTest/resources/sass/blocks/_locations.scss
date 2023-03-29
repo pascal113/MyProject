@@ -1,0 +1,160 @@
+.tabs-content-js {
+    > div {
+        display: none;
+        &.show {
+            display: block;
+        }
+    }
+    @include large {
+        > div {
+            display: block;
+        }
+    }
+}
+#locations-map {
+    overflow: hidden;
+    padding-bottom: 400px;
+    position: relative;
+    height: 0;
+    width: 100%;
+    @include large {
+        padding-bottom: 56.25%;
+    }
+}
+#locations-map iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+.location-map-detail {
+    font-size: 1.6rem;
+    p {
+        font-size: 1.6rem;
+
+        &.location-map-detail__temporarily-closed {
+            color: $c-red;
+            font-style: italic;
+            font-weight: bold;
+            font-size: 1.6rem;
+        }
+    }
+    ul {
+        font-size: 1.6rem;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        i {
+            vertical-align: middle;
+        }
+        a {
+            font-weight: 500;
+        }
+        li {
+            margin-bottom: 3px;
+        }
+    }
+    a {
+        color: #000000;
+    }
+    &__title {
+        letter-spacing: 0.25rem;
+    }
+}
+.block-locations {
+    &__tabs {
+        display: block;
+        margin-bottom: $base-spacing;
+        border-bottom: 1px solid $base-border-color;
+        padding-left: $base-spacing;
+        button {
+            border: 1px solid $base-border-color;
+            color: $base-font-color;
+            display: inline-block;
+            margin-bottom: -1px;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            outline: none;
+            &.selected {
+                border-bottom-color: $c-white;
+            }
+            background: $c-white;
+        }
+    }
+    @include large {
+        border-top: 1px solid $base-border-color;
+        padding-top: $base-spacing;
+        &__content {
+            display: flex;
+        }
+        &__tabs {
+            display: none;
+        }
+        &__map {
+            width: 70%;
+        }
+        &__list {
+            width: 30%;
+            padding-right: 4rem;
+        }
+    }
+}
+.location-detail {
+    &:not(:first-of-type) {
+        border-top: 1px solid $base-border-color;
+        padding-top: $base-spacing;
+    }
+    ul {
+        @include clean-list;
+        margin-bottom: $base-spacing/2;
+        li {
+            margin-bottom: 0.2rem;
+        }
+    }
+    .icon {
+        vertical-align: middle;
+    }
+    &__distance {
+        font-size: 1.8rem;
+        float: right;
+    }
+    &__temporarily-closed {
+        margin-top: $base-spacing;
+        color: $c-red;
+        font-style: italic;
+        font-weight: bold;
+        font-size: 2rem;
+    }
+    &__phone {
+        margin-top: $base-spacing;
+    }
+    &__title {
+        letter-spacing: 0.25rem;
+        a {
+            color: $base-font-color;
+        }
+    }
+    &__services {
+        li {
+            font-size: 1.8rem;
+            margin-right: 1rem;
+            margin-top: 0.5rem;
+        }
+        a {
+            color: $base-font-color;
+            font-weight: $weight-medium;
+        }
+        @include large {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+    }
+    @include medium {
+        max-width: 40rem;
+    }
+    @include large {
+        padding-right: $base-spacing;
+    }
+}

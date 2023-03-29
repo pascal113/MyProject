@@ -1,0 +1,5 @@
+{
+  "packages": [
+    "./resources/views/emails/mjmlComponents/MjClearPhp.js"
+  ]
+}

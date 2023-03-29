@@ -1,0 +1,18 @@
+.block-contact {
+    padding-left: $base-spacing;
+    padding-right: $base-spacing;
+    &__content {
+        padding-top: $section-spacing;
+        padding-bottom: $section-spacing;
+        margin: auto;
+        text-align: center;
+        max-width: $width-small;
+    }
+    &.bgr-grey {
+        background: $c-gray-bgr;
+    }
+    .button {
+        width: 100%;
+        max-width: 34rem;
+    }
+}

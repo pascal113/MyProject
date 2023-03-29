@@ -1,0 +1,14 @@
+.block-contact-email {
+    text-align: left;
+    margin: $section-spacing auto;
+    max-width: $width-xsmall;
+    textarea {
+        min-height: 20rem;
+    }
+    &--has-divider {
+        border-top: 2px solid $base-border-color;
+        border-bottom: 2px solid $base-border-color;
+        margin: $section-spacing/2 auto;
+        padding: $section-spacing/2 0;
+    }
+}

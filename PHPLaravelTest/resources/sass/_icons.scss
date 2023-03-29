@@ -1,0 +1,195 @@
+.icon-link {
+    font-size: 1.8rem;
+    font-weight: $weight-medium;
+    text-decoration: none;
+    display: inline-block;
+    &--key {
+        background: transparent url(/images/icon-key.svg) no-repeat left center;
+        background-size: 3rem 1.5rem;
+        padding: 0 0 0 3.75rem;
+    }
+    &--pin {
+        background: transparent url(/images/icon-pin.svg) no-repeat left center;
+        background-size: 1.4rem 2.7rem;
+        padding: 0 0 0 2rem;
+        &--medium {
+            background-size: 3rem 6rem;
+            height: 6rem;
+            width: 3rem;
+            background-position: center center;
+        }
+        &--large {
+            background-size: 6rem 8.5rem;
+            height: 8.5rem;
+            width: 6rem;
+            background-position: center center;
+        }
+    }
+}
+
+.social-icon {
+    height: 3rem;
+    width: 3rem;
+    background-size: cover;
+    display: inline-block;
+    &--facebook {
+        background: transparent url(/images/icon-social-facebook.svg) no-repeat;
+    }
+    &--instagram {
+        background: transparent url(/images/icon-social-instagram.svg) no-repeat;
+    }
+    &--twitter {
+        background: transparent url(/images/icon-social-twitter.svg) no-repeat;
+    }
+    &--youtube {
+        background: transparent url(/images/icon-social-youtube.svg) no-repeat;
+    }
+}
+
+.badge-apple,
+.badge-google {
+    width: auto;
+    height: 3.5rem;
+    display: inline-block;
+}
+.icon {
+    background-color: #fff;
+    border-radius: 50%;
+    border: 1px solid $base-border-color;
+    width: 10rem;
+    height: 10rem;
+    display: inline-block;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    &--small {
+        width: 3rem;
+        height: 3rem;
+    }
+    &--helper {
+        width: 2.2rem;
+        height: 2.2rem;
+        border: none;
+    }
+    &--info {
+        background-image: url(/images/icon-info.svg);
+    }
+    &--gas {
+        background-image: url(/images/icon-gas.svg);
+    }
+    &--market {
+        background-image: url(/images/icon-market.svg);
+    }
+    &--touchless {
+        background-image: url(/images/icon-washTouchless.svg);
+    }
+    &--tunnel {
+        background-image: url(/images/icon-washTunnel.svg);
+    }
+    &--self {
+        background-image: url(/images/icon-washSelf.svg);
+    }
+    &--press {
+        background-image: url(/images/icon-tablet.svg);
+    }
+    &--doc {
+        background-image: url(/images/icon-signDoc.svg);
+    }
+    &--scope {
+        background-image: url(/images/icon-scope.svg);
+    }
+    &--thumbs-up {
+        background-image: url(/images/icon-thumbs-up.svg);
+    }
+    &--mag-glass {
+        background-image: url(/images/icon-mag-glass.svg);
+    }
+    &--cloudy {
+        background-image: url(/images/icon-cloudy.svg);
+    }
+    &--hands-heart {
+        background-image: url(/images/icon-hands-heart.svg);
+    }
+    &--people-group {
+        background-image: url(/images/icon-people-group.svg);
+    }
+    &--contact {
+        background-image: url(/images/icon-contact.svg);
+    }
+    &--phone {
+        background-image: url(/images/icon-phone.svg);
+    }
+    &--mail {
+        background-image: url(/images/icon-mail.svg);
+    }
+    &--snail-mail {
+        background-image: url(/images/icon-snail-mail.svg);
+    }
+    &--email {
+        background-image: url(/images/icon-email.svg);
+    }
+    &--loading {
+        background-image: url(/images/loading.gif);
+    }
+    &--card-balance {
+        background-image: url(/images/icon-card-balance.svg);
+    }
+}
+.checkout-icon {
+    width: 5rem;
+    height: 5rem;
+    display: inline-block;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    &--cost {
+        background-image: url(/images/icon-checkout-Cost.svg);
+    }
+    &--gift {
+        background-image: url(/images/icon-checkout-Gift.svg);
+    }
+    &--email {
+        background-image: url(/images/icon-checkout-Email.svg);
+    }
+    &--calendar {
+        background-image: url(/images/icon-checkout-Calendar.svg);
+    }
+    &--payment {
+        background-image: url(/images/icon-checkout-Payment.svg);
+        width: 7rem;
+        height: 7rem;
+    }
+    &--membership {
+        width: 14rem;
+        height: 5rem;
+        background-image: url(/images/icon-checkout-Membership.svg);
+    }
+}
+.scroll-down-icon {
+    background-color: $c-blue-dark;
+    border-radius: 50%;
+    width: 7rem;
+    height: 7rem;
+    display: inline-block;
+    background-size: 3.5rem auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url(/images/icon-arrow-down-white.svg);
+    &--section-divider {
+        position: absolute;
+        top: -3.5rem;
+        left: 50%;
+        margin-left: -3.5rem;
+    }
+}
+.bb-digital-icon {
+    border-radius: 50%;
+    width: 19rem;
+    height: 19rem;
+    display: inline-block;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url(/images/icon-brown-bear-digital.svg);
+    margin-bottom: $base-spacing;
+}

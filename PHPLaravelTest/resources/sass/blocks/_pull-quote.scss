@@ -1,0 +1,42 @@
+.block-pull-quote {
+    background: $c-blue-dark;
+    padding: $section-spacing $base-spacing;
+    text-align: center;
+    blockquote {
+        color: $c-white;
+        font-size: 2.8rem;
+        font-weight: $weight-bold;
+        &:before {
+            content: '\201C';
+        }
+        &:after {
+            content: '\201D';
+        }
+    }
+    &.green-quote {
+        blockquote {
+            color: $c-green;
+        }
+    }
+    cite {
+        color: $c-white;
+        font-size: 2.2rem;
+        font-style: normal;
+        &:before {
+            content: '\2014';
+            margin-right: 0.5rem;
+        }
+    }
+    &__content {
+        max-width: 53rem;
+        margin: auto;
+    }
+    &__avatar {
+        box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.6);
+        display: inline-block;
+        border-radius: 50%;
+        img {
+            display: block;
+        }
+    }
+}

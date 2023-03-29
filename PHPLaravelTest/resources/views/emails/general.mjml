@@ -1,0 +1,28 @@
+<mjml>
+
+  <mj-head>
+    <mj-include path="./partials/styles.mjml" />
+  </mj-head>
+
+  <mj-body background-color="#fff">
+
+    <mj-include path="./partials/header.mjml" />
+
+    <mj-section background-color="#fff" padding-bottom="0">
+      <mj-column width="600px">
+        <mj-include path="./partials/hello.mjml" />
+      </mj-column>
+      <mj-column width="600px">
+        <mj-text>
+          <mj-raw>{!! $content['html'] !!}</mj-raw>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-raw>@if (!(isset($isInternal) && $isInternal))</mj-raw>
+        <mj-include path="./partials/contact-info-html.mjml" />
+    <mj-raw>@endif</mj-raw>
+    <mj-include path="./partials/footer.mjml" />
+
+  </mj-body>
+
+</mjml>

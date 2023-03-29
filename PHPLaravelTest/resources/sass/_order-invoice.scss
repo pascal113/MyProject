@@ -1,0 +1,54 @@
+.invoice {
+    .row {
+        display: flex;
+        justify-content: space-around;
+
+        .col {
+            min-width: 350px;
+
+            &.full-width {
+                width: 100%;
+            }
+            &.full-width {
+                width: 100%;
+                padding: 0 30px;
+            }
+            &.right {
+                text-align: right;
+            }
+
+            p {
+                font-size: 1.5rem;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    hr {
+        border-top: 1px solid #bbb;
+        margin: 30px 0;
+    }
+
+    table.line-items {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+        margin: 30px 0;
+        padding: 0;
+
+        th,
+        td {
+            text-align: left;
+            font-size: 1.3rem;
+            padding: 10px 20px;
+        }
+
+        th {
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f3f3f3;
+        }
+    }
+}

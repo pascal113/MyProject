@@ -1,0 +1,183 @@
+// FIND WASH PAGE AND DETAIL
+
+// Find a wash top section
+
+.find-a-wash-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.find-a-wash-top {
+    margin-bottom: $base-spacing;
+    &__col {
+        margin: $base-spacing/2 0;
+    }
+    .button {
+        margin-right: 1rem;
+    }
+    &__button {
+        padding-top: $base-spacing;
+        a {
+            color: $base-font-color;
+            display: block;
+            margin-top: 1rem;
+        }
+    }
+    select {
+        width: 100%;
+        border-color: $base-border-color;
+    }
+    @include large {
+        display: flex;
+        justify-content: flex-start;
+        margin-left: -$base-spacing/2;
+        margin-right: -$base-spacing/2;
+        margin-bottom: 0;
+        &__col {
+            margin: 0 $base-spacing/2 $base-spacing;
+            flex: 1;
+        }
+        &__button {
+            padding-top: 2.7rem;
+            a {
+                display: block;
+                margin-top: 0.5rem;
+            }
+            .button {
+                width: 100%;
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+.select-features {
+    margin: $base-spacing 0;
+    input[type='checkbox'] {
+        margin-right: 1rem;
+    }
+    label {
+        margin-right: 2rem;
+        font-size: 1.8rem;
+        font-weight: $weight-regular;
+        cursor: pointer;
+        i {
+            vertical-align: middle;
+        }
+    }
+    @include large {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+.location-layout {
+    display: flex;
+    flex-direction: column;
+    .location-detail {
+        .location-detail__top ul li {
+            font-size: 2.4rem;
+
+            &.location-detail__temporarily-closed {
+                font-size: 2.4rem;
+            }
+        }
+        .location-detail__services li {
+            font-size: 2rem;
+        }
+    }
+    &__map {
+        order: 2;
+    }
+    &__list {
+        order: 1;
+    }
+    &__about {
+        order: 3;
+        .section-title {
+            padding-top: $base-spacing;
+            font-size: 2.6rem;
+        }
+        .section-subtitle {
+            font-size: 2.2rem;
+            letter-spacing: normal;
+        }
+        .location-hours dl {
+            font-size: 1.8rem;
+
+            .location-detail__temporarily-closed {
+                font-size: 1.8rem;
+            }
+        }
+    }
+    @include large {
+        display: block;
+        @include group;
+        &__map {
+            width: 65%;
+            float: right;
+        }
+        &__list {
+            width: 35%;
+            padding-right: $base-spacing * 2;
+            float: left;
+        }
+        &__about {
+            width: 35%;
+            padding-right: $base-spacing * 2;
+            float: left;
+            clear: both;
+            .section-title {
+                border-top: 1px solid $base-border-color;
+                padding-top: $base-spacing/2;
+            }
+        }
+    }
+}
+.location-manager {
+    font-size: 1.8rem;
+    margin: $base-spacing/2 0;
+    display: block;
+}
+.location-hours {
+    .icon {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    .section-subtitle {
+        margin-bottom: 0;
+        position: relative;
+        padding-left: 4rem;
+    }
+    dl {
+        @include group;
+        margin-bottom: $base-spacing/2;
+        margin-top: $base-spacing/2;
+        padding-bottom: $base-spacing/2;
+        padding-left: 4rem;
+        border-bottom: 1px solid $base-border-color;
+        max-width: 40rem;
+        font-size: $base-font-size;
+    }
+    dt {
+        font-weight: $weight-medium;
+    }
+    dd {
+        margin-left: 0;
+        margin-bottom: 1rem;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    @include medium {
+        dt {
+            float: left;
+            clear: right;
+        }
+        dd {
+            float: right;
+            margin-left: 0.5rem;
+            margin-bottom: 0;
+        }
+    }
+}

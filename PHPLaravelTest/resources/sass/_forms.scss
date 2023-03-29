@@ -1,0 +1,503 @@
+/* Field Wrapper*/
+.field-wrapper {
+    margin-bottom: $base-spacing;
+    max-width: $form-field-width;
+    position: relative;
+    label {
+        margin-bottom: 5px;
+    }
+    &--flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &--sm {
+        max-width: $form-field-width/2;
+        input,
+        select {
+            max-width: $form-field-width/4;
+        }
+    }
+    &--checkbox {
+        label {
+            font-weight: normal;
+            font-size: 1.75rem;
+        }
+    }
+}
+
+/* Basic form styles */
+
+fieldset {
+    background-color: $base-background-color;
+    border: $base-border;
+    margin: 0 0 $base-spacing;
+    padding: $base-spacing;
+}
+
+input,
+label,
+select {
+    display: block;
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    &.input-large {
+        font-size: 2.2rem;
+        font-weight: $weight-medium;
+    }
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: $base-spacing / 2;
+
+    &.required::after {
+        content: '*';
+    }
+
+    abbr {
+        display: none;
+    }
+    .label-meta {
+        font-weight: 400;
+    }
+    &.weight-default {
+        font-weight: 400;
+    }
+}
+.label-info {
+    font-size: 1.8rem;
+    display: block;
+    margin-top: -$base-spacing / 2.5;
+    margin-bottom: $base-spacing / 2;
+}
+
+input[type='color'],
+input[type='date'],
+input[type='datetime'],
+input[type='datetime-local'],
+input[type='email'],
+input[type='month'],
+input[type='number'],
+input[type='password'],
+input[type='search'],
+input[type='tel'],
+input[type='text'],
+input[type='time'],
+input[type='url'],
+input[type='week'],
+input:not([type]),
+textarea,
+select[multiple='multiple'] {
+    background-color: $base-background-color;
+    border: $base-border;
+    border-radius: 2px;
+    box-shadow: $form-box-shadow;
+    box-sizing: border-box;
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    margin-bottom: 0;
+    padding: 1rem;
+    width: 100%;
+    transition: border-color $base-duration $base-timing;
+    &:hover {
+        border-color: shade($base-border-color, 20%);
+    }
+
+    &:focus {
+        //border-color: #333;
+        box-shadow: none;
+        outline: none;
+    }
+
+    &:disabled {
+        background-color: shade($base-background-color, 5%);
+        cursor: not-allowed;
+
+        &:hover {
+            border: $base-border;
+        }
+    }
+    &.has-error {
+        border-color: $error-color;
+    }
+}
+
+textarea {
+    resize: vertical;
+}
+
+input[type='search'] {
+    appearance: none;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+    display: inline;
+    margin-right: $base-spacing / 2;
+
+    + label {
+        display: inline-block;
+    }
+}
+
+input[type='file'] {
+    margin-bottom: 0;
+    width: 100%;
+}
+
+select {
+    margin-bottom: 0;
+    max-width: 100%;
+    width: auto;
+}
+
+// To help create placeholder color for select
+select {
+    color: $c-black;
+}
+select:required:invalid {
+    color: $placeholder-color;
+}
+select:required:focus {
+    color: $c-black;
+}
+
+input.location-field {
+    background: transparent url(/images/icon-pin.svg) no-repeat left center;
+    background-size: 2.5rem 2.5rem;
+    padding-left: 3rem;
+}
+
+select {
+    display: block;
+    font-size: $base-font-size;
+    font-family: $base-font-family;
+    font-weight: $weight-regular;
+    color: #444;
+    line-height: 1.15;
+    padding: 1rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    border: 1px solid $base-border-color;
+    box-shadow: none;
+    border-radius: 0.2rem;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    background-image: url(/images/icon-arrow-down.svg),
+        linear-gradient(to bottom, #ffffff 0%, #ffffff 100%);
+    background-repeat: no-repeat, repeat;
+    background-position: right 0.15em top 50%, 0 0;
+    background-size: 1.25em auto, 100%;
+}
+
+select::-ms-expand {
+    display: none;
+}
+select:hover {
+    border-color: #888;
+}
+select:focus {
+    border-color: #aaa;
+    box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7);
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    color: #222;
+    outline: none;
+}
+select option {
+    font-weight: normal;
+}
+
+// Errors
+
+.error-text {
+    display: block;
+    color: $error-color;
+    font-size: 1.5rem;
+    margin-top: 0.3rem;
+}
+
+.robot-check {
+    border: $base-border;
+    padding: $base-spacing;
+    background: $c-white;
+    label {
+        font-weight: $weight-regular;
+        margin-bottom: 0;
+    }
+}
+
+// Form Row
+
+.form-row {
+    text-align: left;
+    margin: 0 auto;
+    max-width: $width-xsmall;
+    textarea {
+        min-height: 20rem;
+    }
+    &__info {
+        p {
+            font-size: 1.6rem;
+        }
+        text-align: center;
+        a {
+            color: $base-font-color;
+        }
+    }
+    &__links {
+        display: flex;
+        justify-content: center;
+        a {
+            font-size: 2rem;
+            color: $base-font-color;
+            letter-spacing: 0.1rem;
+            &:first-child {
+                margin-right: 1rem;
+                padding-right: 1rem;
+                border-right: 1px solid $base-font-color;
+            }
+        }
+    }
+    &--forgot-password {
+        display: flex;
+        justify-content: center;
+        a {
+            font-size: 2rem;
+            color: $base-font-color;
+            letter-spacing: 0.1rem;
+        }
+    }
+    &--has-divider {
+        border-top: 2px solid $base-border-color;
+        border-bottom: 2px solid $base-border-color;
+        margin: $section-spacing/2 auto;
+        padding: $section-spacing/2 0;
+    }
+}
+
+.password-reveal-wrap {
+    position: relative;
+    input[type='password'],
+    input[type='text'] {
+        padding-right: 5rem;
+    }
+}
+.password-reveal {
+    border: none;
+    cursor: pointer;
+    display: block;
+    height: 2rem;
+    width: 3.5rem;
+    position: absolute;
+    background: transparent url(/images/password-show.svg) no-repeat center center;
+    background-size: contain;
+    right: 0.5rem;
+    top: calc(50% - 1rem);
+    &:focus {
+        outline: none;
+    }
+    &.show-password {
+        background: transparent url(/images/password-hide.svg) no-repeat center center;
+    }
+}
+.show-password {
+    /*css you want */
+    color: blue;
+}
+.hide-password {
+    /*css you want */
+    color: red;
+}
+.form-instructions {
+    font-size: $base-font-size;
+    margin-bottom: 0.3rem;
+    display: block;
+    &.small {
+        font-size: 16px;
+    }
+}
+.input-custom-number {
+    display: flex;
+    align-items: center;
+    button {
+        display: inline-block;
+        height: 40px;
+        border: 1px solid #cccccc;
+        background: #fff;
+        cursor: pointer;
+        transition: all 0.25s ease-in-out;
+        &:hover {
+            background-color: #000;
+            color: #fff;
+        }
+        &:focus {
+            border: 1px solid #cccccc;
+            outline: none;
+        }
+        @include medium {
+            height: 45px;
+        }
+    }
+    input[type='text'],
+    input[type='number'] {
+        max-width: 65px;
+        display: inline-block;
+        text-align: center;
+        border-top: 1px solid #cccccc;
+        border-bottom: 1px solid #cccccc;
+        border-left: none;
+        border-right: none;
+    }
+}
+.form-vehicle-selection {
+    .club-gift {
+        ul {
+            display: inline-block;
+        }
+        label {
+            font-weight: $weight-regular;
+            font-size: $base-font-size;
+        }
+    }
+    .club-vehicle {
+        border-top: 2px solid $base-border-color;
+    }
+    .page-intro {
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+    }
+}
+.location-field-wrap {
+    display: flex;
+    align-items: center;
+    .icon {
+        margin-left: 1rem;
+        cursor: pointer;
+        border-radius: 0;
+        width: 3.8rem;
+        height: 3.8rem;
+        background-size: 3rem 3rem;
+        background-position: center center;
+    }
+}
+.radio-group {
+    max-width: 54rem;
+    margin: auto;
+    &__item {
+        border-bottom: 1px solid $base-border-color;
+        font-size: 2.2rem;
+        margin-bottom: 0.5rem;
+        padding-bottom: 0.5rem;
+        @include medium {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    .section-subtitle {
+        margin-bottom: 1rem;
+    }
+    &__radio {
+        text-align: left;
+        position: relative;
+        padding-left: 20px;
+        input {
+            position: absolute;
+            top: 6px;
+            left: 0;
+        }
+    }
+    &__detail {
+        font-size: 2rem;
+        font-weight: $weight-light;
+        text-align: left;
+        padding-left: 25px;
+        @include medium {
+            margin-left: 20px;
+            text-align: right;
+            max-width: 80px;
+            padding-left: 0;
+        }
+    }
+    &__no-results {
+        font-size: 2rem;
+        font-weight: $weight-light;
+    }
+    &--short {
+        max-width: 30.6rem;
+    }
+}
+.centered-radio-group {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    ul {
+        text-align: left;
+        display: inline-block;
+    }
+}
+.checkbox-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 1rem;
+    label {
+        font-weight: $weight-regular;
+    }
+    @include medium {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+.verification-code-digits {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    input[type='number'] {
+        width: 47px;
+        border: 2px solid $base-border-color;
+        margin: 0 3px;
+        text-align: center;
+    }
+    /* Hide number arrows Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    /* Hide number arrows Firefox */
+    input[type='number'] {
+        -moz-appearance: textfield;
+    }
+}
+.verification-code-loading {
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+}
+.verification-code-notification {
+    text-align: center;
+    padding: 5px;
+    color: $c-blue-dark;
+
+    &.error {
+        color: $c-red;
+    }
+}
+.re-send-email-loading {
+    height: 73px;
+    text-align: center;
+    vertical-align: middle;
+}
+.re-send-email-notification {
+    height: 25px;
+    margin: 0;
+    text-align: center;
+    color: $c-blue-dark;
+
+    &.error {
+        color: $c-red;
+    }
+}

@@ -1,0 +1,38 @@
+.qr-code {
+    text-align: center;
+    a {
+        text-decoration: none;
+    }
+    &__img {
+        width: 200px;
+    }
+    &__text {
+        display: block;
+        font-size: 1.2rem;
+        color: $c-black;
+        margin: 5px auto 0;
+    }
+    &__certificate-link {
+        display: block;
+        margin: 10px auto 0;
+        text-decoration: underline;
+    }
+}
+
+.one-time-wash-barcode {
+    text-align: center;
+    a {
+        text-decoration: none;
+    }
+    &__text {
+        display: block;
+        font-size: 1.2rem;
+        color: $c-black;
+        margin: 5px auto 0;
+    }
+    &__certificate-link {
+        display: block;
+        margin: 10px auto 0;
+        text-decoration: underline;
+    }
+}

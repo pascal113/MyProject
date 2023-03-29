@@ -1,0 +1,35 @@
+.block-contact-phone {
+    border-bottom: 2px solid $base-border-color;
+    margin: $section-spacing 0;
+    h3 {
+        margin-bottom: 0;
+        font-size: 2.6rem;
+        letter-spacing: 0.25rem;
+        font-weight: $weight-medium;
+    }
+    p {
+        font-size: 3.2rem;
+        font-weight: $weight-light;
+    }
+    ul {
+        max-width: 360px;
+    }
+    &__detail {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: $base-spacing;
+        padding-top: $base-spacing;
+        border-top: 2px solid $base-border-color;
+    }
+    &__bottom {
+        margin-top: $base-spacing;
+        p {
+            font-size: 3.2rem;
+            font-weight: $weight-light;
+            max-width: $width-xsmall;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}

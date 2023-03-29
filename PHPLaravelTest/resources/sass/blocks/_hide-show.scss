@@ -1,0 +1,27 @@
+.block-hide-show {
+    scroll-margin: 150px;
+
+    &__content {
+        display: none;
+        .is-active & {
+            display: block;
+        }
+    }
+    &__trigger {
+        text-decoration: none;
+        position: relative;
+        font-size: 1.8rem;
+        margin: $base-spacing 0;
+        display: inline-block;
+        &:before {
+            content: '\002B';
+            color: $c-blue-dark;
+            margin-right: 5px;
+        }
+        .is-active & {
+            &:before {
+                content: '\2212';
+            }
+        }
+    }
+}

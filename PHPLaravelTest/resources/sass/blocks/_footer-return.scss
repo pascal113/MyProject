@@ -1,0 +1,24 @@
+.footer-return {
+    @include container;
+    margin-top: 6rem;
+    padding: 4.5rem 0 6rem;
+    border-top: 2px solid $base-border-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    .button-right {
+        @include small {
+            float: right;
+        }
+    }
+    form {
+        width: 100%;
+    }
+    @include small {
+        flex-direction: row;
+    }
+    &--no-border {
+        border-top: none;
+    }
+}

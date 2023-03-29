@@ -1,0 +1,18 @@
+<mj-section background-color="#e3e4e6">
+  <mj-column>
+    <mj-social icon-size="30px" mode="horizontal">
+      <mj-social-element href="https://www.facebook.com/BrownBearCarWash" src="{{ asset('/images/email/icon-social-facebook.png') }}" padding="0 20px 0 0"></mj-social-element>
+      <mj-social-element href="https://www.instagram.com/brownbearcarwash/" src="{{ asset('/images/email/icon-social-instagram.png') }}" padding="0 20px 0 20px"></mj-social-element>
+      <mj-social-element href="https://twitter.com/BrownBear" src="{{ asset('/images/email/icon-social-twitter.png') }}" padding="0 20px 0 20px"></mj-social-element>
+      <mj-social-element href="https://www.youtube.com/channel/UCUMOKfYWM8XUbnr-lnruhgQ" src="{{ asset('/images/email/icon-social-youtube.png') }}" padding="0 0 0 20px"></mj-social-element>
+    </mj-social>
+    <mj-raw>@if (!empty($user))</mj-raw>
+        <mj-text color="#666666" font-size="15px" align="center">This email was sent to <a style="color:#666666;" href="mailto:{{ $user->email }}">{{ $user->email }}</a> because you opted in on BrownBear.com. To adjust your communication preferences log in to your account and <a style="color:#666666;" href="{{ cms_route('my-account.notification-preferences.edit') }}">manage your notification settings</a>.</mj-text>
+    <mj-raw>@endif</mj-raw>
+    <mj-text color="#666666" font-size="15px" align="center">Brown Bear Car Wash, A Car Wash Enterprises, Inc. Company, 3977 Leary Way NW, Seattle, Washington 98107</mj-text>
+
+    <mj-text color="#666666" font-size="13px" align="center">Copyright <sup>©</sup> {{ date('Y') }} Car Wash Enterprises, Inc.</mj-text>
+    </mj-text>
+  </mj-column>
+
+</mj-section>

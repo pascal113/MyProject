@@ -1,0 +1,93 @@
+/* Footer */
+.doc-footer {
+    position: relative;
+    margin-top: auto; // footer bottom when no content
+    background: $c-gray-bgr;
+    &__column-wrap {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        flex-direction: column;
+        padding: $gutter-padding;
+    }
+    &__column {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 1em 0;
+        width: 100%;
+        max-width: 48rem;
+        &:nth-of-type(1) {
+            order: 1;
+            img {
+                margin: 0.5rem;
+            }
+            @include large {
+                justify-content: flex-start;
+            }
+        }
+        &:nth-of-type(2) {
+            order: 3;
+        }
+        &:nth-of-type(3) {
+            order: 2;
+        }
+        .icon-link {
+            margin-right: 1.5rem;
+            color: $c-black;
+            font-weight: $weight-light;
+            width: 12rem;
+        }
+        &--center {
+            text-align: center;
+            padding: 0 2rem;
+            justify-content: center;
+            order: 3;
+        }
+        &--first {
+            border-bottom: 1px solid $base-border-color;
+            padding-bottom: $base-spacing;
+            @include large {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+        }
+    }
+    .block-social-icons {
+        margin: auto;
+    }
+    @include large {
+        &__column-wrap {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        &__column {
+            margin: 0;
+            flex: 1;
+            &:nth-of-type(1) {
+                order: 1;
+            }
+            &:nth-of-type(2) {
+                order: 2;
+            }
+            &:nth-of-type(3) {
+                order: 3;
+            }
+            &--center {
+                width: auto;
+            }
+            // ie11 hack
+            @media all and (-ms-high-contrast: none) {
+                flex: none;
+            }
+        }
+    }
+
+    #version {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        font-size: 10px;
+        color: $c-gray-bgr;
+    }
+}

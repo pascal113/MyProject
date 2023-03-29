@@ -1,0 +1,47 @@
+.block-page-hero {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    height: 31.5rem;
+    &--short {
+        height: 15rem;
+    }
+    &__title {
+        position: absolute;
+        max-width: 80rem;
+        width: 100%;
+        margin: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        padding: 0 $base-spacing;
+    }
+    img {
+        position: absolute;
+        display: block;
+        top: -9999px;
+        bottom: -9999px;
+        left: -9999px;
+        right: -9999px;
+        margin: auto;
+        width: 100%;
+        min-width: 128rem;
+        height: auto;
+        min-height: 31.5rem;
+    }
+    &--title-bar {
+        .block-page-hero__title {
+            background: $c-gray-bgr;
+            border-bottom: 1px solid $base-border-color;
+            max-width: none;
+            bottom: 0;
+            transform: translate(-50%, 0);
+            top: auto;
+            padding: $base-spacing;
+            &.promo {
+                font-size: 3.4rem;
+            }
+        }
+    }
+}

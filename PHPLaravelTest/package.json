@@ -1,0 +1,84 @@
+{
+    "private": true,
+    "scripts": {
+        "start": "concurrently --raw --kill-others \"yarn serve\" \"yarn dev\"",
+        "serve": "php artisan serve --port=8010",
+        "dev": "cross-env NODE_ENV=development mix -- --watch",
+        "start:dusk": "concurrently --raw --max-processes=1 \"yarn build:dusk\" \"yarn serve:dusk\"",
+        "serve:dusk": "php artisan serve --port=8010 --env=dusk",
+        "build:dusk": "cross-env NODE_ENV=development mix --production",
+        "build:prod": "cross-env NODE_ENV=production mix --production",
+        "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "_prettier": "prettier --write './resources/{js,sass}/**/*.{js,css,scss}' && prettier --write --no-semi './resources/js/**/*.vue'",
+        "ecs": "./vendor/bin/ecs check ./ --fix --config ./vendor/fpcs/php-coding-standard/easy-coding-standard-config.php",
+        "phpcbf": "./vendor/bin/phpcbf ./",
+        "phpcs": "./vendor/bin/phpcs -sp ./",
+        "_eslint": "eslint --fix 'resources/js/**/*.{js,vue}'",
+        "lint": "yarn _prettier && yarn ecs && yarn phpcbf && yarn _eslint",
+        "test:html": "php artisan sitemap:generate --for-valimate && yarn valimate",
+        "test:unit": "./vendor/bin/phpunit  --bootstrap vendor/autoload.php tests/",
+        "test:coverage": "phpdbg -rr ./vendor/bin/phpunit --bootstrap vendor/autoload.php tests/ --coverage-text",
+        "compile-emails": "mjml ./resources/views/emails/*.mjml -o ./resources/views/emails/ --config.beautify true --config.minify false && cd ./resources/views/emails/ && for f in *.html; do mv -f \"$f\" \"${f%%.*}-html.blade.php\"; done"
+    },
+    "engines": {
+        "node": ">=14.15"
+    },
+    "dependencies": {
+        "cropperjs": "^1.5.6",
+        "featherlight": "^1.7.13",
+        "mailcheck": "^1.1.1",
+        "slick-carousel": "1.8.1",
+        "tippy.js": "^6.3.2",
+        "toastr": "^2.1.2",
+        "uuid": "^3.3.3",
+        "vue-toasted": "^1.1.27",
+        "vuedraggable": "^2.23.0"
+    },
+    "devDependencies": {
+        "@percy/agent": "^0.10.0",
+        "axios": "^0.19.0",
+        "browser-sync": "^2.26.13",
+        "browser-sync-webpack-plugin": "2.3.0",
+        "concurrently": "^6.4.0",
+        "cross-env": "^5.1",
+        "dotenv": "^8.2.0",
+        "eslint-plugin-fpcs": "^1.2.6",
+        "husky": "^3.0.2",
+        "jquery": "^2.2.4",
+        "laravel-mix": "^6.0.5",
+        "lint-staged": "^9.2.1",
+        "mjml": "^4.5.1",
+        "popper.js": "^1.12",
+        "postcss": "^8.1",
+        "pr-message": "^1.0.2",
+        "prettier": "^1.18.2",
+        "resolve-url-loader": "^2.3.1",
+        "sass": "^1.15.2",
+        "sass-loader": "^7.1.0",
+        "snyk": "^1.298.1",
+        "valimate": "^3.0.2",
+        "vue": "^2.5.17",
+        "vue-loader": "^15.9.5",
+        "vue-template-compiler": "^2.6.10",
+        "webpack": "^5.1.3"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged",
+            "post-commit": "pr-message"
+        }
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all",
+            "not ie < 11"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    }
+}

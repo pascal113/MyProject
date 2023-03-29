@@ -1,0 +1,67 @@
+.block-wash-card-balance {
+    background: $c-gray-bgr;
+    padding: $section-spacing $base-spacing;
+    &__content-wrap {
+        max-width: $width-small;
+        margin: auto;
+    }
+    &__header {
+        text-align: center;
+        margin-bottom: $section-spacing;
+    }
+    &__content {
+        a {
+            color: $base-font-color;
+        }
+        img {
+            display: block;
+            width: 100%;
+            max-width: 250px;
+            margin: 0 auto 20px;
+        }
+        &--right {
+            text-align: center;
+            .field-wrapper {
+                margin: auto;
+            }
+        }
+        @include medium {
+            display: flex;
+            &--left {
+                width: 100%;
+                max-width: 250px;
+                margin-right: 4rem;
+            }
+            &--right {
+                text-align: left;
+                flex: 1;
+            }
+        }
+    }
+    &__results {
+        h4 {
+            font-weight: 500;
+            letter-spacing: 0.25rem;
+            margin: 0 0 1rem;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            li {
+                font-weight: $weight-bold;
+                font-size: 2.2rem;
+                margin-bottom: 1.5rem;
+                span {
+                    display: block;
+                    font-size: 1.6rem;
+                    font-weight: $weight-bold;
+                }
+            }
+        }
+    }
+    &__footer {
+        a {
+            text-decoration: none;
+        }
+    }
+}

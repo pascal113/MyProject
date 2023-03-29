@@ -1,0 +1,5 @@
+<mj-text>
+    <h2 style="font-size:24px;margin-bottom:0;">
+        Hello{{ !empty($user) ? ' '.$user->first_name : (!empty($name) ? ' '.$name : '') }} -
+    </h2>
+</mj-text>

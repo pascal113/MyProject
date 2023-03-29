@@ -1,0 +1,19 @@
+    <mj-attributes>
+        <mj-text font-size="18px" color="#000" line-height="22px" />
+        <mj-all font-family="Arial, Helvetica" />
+        <mj-class name="order-section" border-bottom="1px solid #c0c4ca" padding-left="25px" padding-right="25px" />
+        <mj-class name="th" font-size="15px" text-decoration="underline" padding="0 10px 0 0" />
+        <mj-class name="td" font-size="17px" font-weight="bold" padding="0 10px 0 0" />
+        <mj-class name="txt-sm" font-size="15px" padding-top="0" padding-bottom="0" line-height="20px" />
+        <mj-class name="total" font-weight="bold" />
+        <mj-class name="p-link" color="#094d8d" />
+        <mj-class name="b-link" color="#000000" />
+    </mj-attributes>
+    <mj-style>
+        .pre {
+            white-space: pre;
+        }
+        a.link-black {
+            color: #000000;
+        }
+    </mj-style>

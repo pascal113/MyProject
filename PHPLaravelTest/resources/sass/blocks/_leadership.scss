@@ -1,0 +1,16 @@
+.block-leadership {
+    @include container;
+    padding-top: $section-spacing;
+    padding-bottom: $section-spacing;
+    margin: auto;
+    text-align: center;
+    &__rows {
+        margin-bottom: $base-spacing;
+    }
+    img {
+        margin: $base-spacing/2;
+        box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
+        border-radius: 50%;
+        max-width: 16rem;
+    }
+}

@@ -1,0 +1,19 @@
+.block-getting-started {
+    background: $c-blue-bgr;
+    padding-left: $base-spacing;
+    padding-right: $base-spacing;
+    .button-row {
+        margin-top: ($section-spacing - $base-spacing);
+        margin-bottom: 0;
+    }
+    &__content {
+        padding-top: $section-spacing;
+        padding-bottom: $section-spacing;
+        margin: auto;
+        text-align: center;
+        max-width: $width-small;
+    }
+    &.bgr-white {
+        background: $c-white;
+    }
+}

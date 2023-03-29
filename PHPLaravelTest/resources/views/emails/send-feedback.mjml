@@ -1,0 +1,161 @@
+<mjml>
+
+  <mj-head>
+    <mj-include path="./partials/styles.mjml" />
+  </mj-head>
+
+  <mj-body background-color="#fff">
+
+    <mj-include path="./partials/header-internal.mjml" />
+
+    <mj-section background-color="#fff" padding-bottom="0">
+      <mj-column width="600px">
+        <mj-text padding-bottom="0" padding-top="0">A visitor{!! $host ? ' on <a href="http://' . $host . '">' . $host . '</a>' : '' !!} submitted the following:</mj-text>
+
+        <mj-text padding-bottom="0" padding-top="0"><b>Name</b>: {{ $name }}</mj-text>
+
+        <mj-text padding-bottom="0" padding-top="0"><b>Phone Number</b>: {{ $phone }}</mj-text>
+
+        <mj-text padding-bottom="0" padding-top="0"><b>Email Address</b>: {{ $email }}</mj-text>
+
+        <mj-raw>
+            @if ($regarding)
+        </mj-raw>
+        <mj-text padding-bottom="0" padding-top="0"><b>Regarding</b>: {{ $regarding }}</mj-text>
+        <mj-raw>
+            @endif
+        </mj-raw>
+        <mj-clear-php />
+
+        <mj-raw>
+            @if ($regarding === 'Car Wash Location Inquiry')
+        </mj-raw>
+            <mj-clear-php />
+
+            <mj-raw>
+                @if ($location)
+            </mj-raw>
+            <mj-text padding-bottom="0" padding-top="0"><b>Location</b>: {{ $location }}</mj-text>
+            <mj-raw>
+                @endif
+            </mj-raw>
+            <mj-clear-php />
+
+            <mj-raw>
+                @if ($service)
+            </mj-raw>
+            <mj-text padding-bottom="0" padding-top="0"><b>Service</b>: {{ $service }}</mj-text>
+            <mj-raw>
+                @endif
+            </mj-raw>
+            <mj-clear-php />
+        <mj-raw>
+            @endif
+        </mj-raw>
+        <mj-clear-php />
+
+        <mj-raw>
+            @if ($regarding === 'Programs Inquiry')
+        </mj-raw>
+            <mj-clear-php />
+
+            <mj-raw>
+                @if ($program)
+            </mj-raw>
+            <mj-text padding-bottom="0" padding-top="0"><b>Program</b>: {{ $program }}</mj-text>
+            <mj-raw>
+                @endif
+            </mj-raw>
+            <mj-clear-php />
+        <mj-raw>
+            @endif
+        </mj-raw>
+        <mj-clear-php />
+
+        <mj-raw>
+            @if ($regarding === 'Unlimited Wash Club')
+        </mj-raw>
+            <mj-clear-php />
+
+            <mj-raw>
+                @if ($washClubInquiryType)
+            </mj-raw>
+            <mj-text padding-bottom="0" padding-top="0"><b>Inquiry Type</b>: {{ $washClubInquiryType }}</mj-text>
+            <mj-raw>
+                @endif
+            </mj-raw>
+            <mj-clear-php />
+
+            <mj-raw>
+                @if ($washClubInquiryType === 'Club Change')
+            </mj-raw>
+                <mj-raw>
+                    @if ($washClubChangeAction)
+                </mj-raw>
+                <mj-text padding-bottom="0" padding-top="0"><b>What would you like to change?</b>: {{ $washClubChangeAction }}</mj-text>
+                <mj-raw>
+                    @endif
+                </mj-raw>
+                <mj-clear-php />
+
+                <mj-raw>
+                    @if ($washClubInquiryType === 'Club Change')
+                </mj-raw>
+                    <mj-raw>
+                        @if ($washClubChangeLicensePlate)
+                    </mj-raw>
+                    <mj-text padding-bottom="0"  padding-top="0"><b>License Plate Number</b>: {{ $washClubChangeLicensePlate }}</mj-text>
+                    <mj-raw>
+                        @endif
+                    </mj-raw>
+                    <mj-clear-php />
+
+                    <mj-raw>
+                        @if ($washClubChangeTagNumber)
+                    </mj-raw>
+                    <mj-text padding-bottom="0"  padding-top="0"><b>Tag Number</b>: {{ $washClubChangeTagNumber }}</mj-text>
+                    <mj-raw>
+                        @endif
+                    </mj-raw>
+                    <mj-clear-php />
+                <mj-raw>
+                    @endif
+                </mj-raw>
+                <mj-clear-php />
+            <mj-raw>
+                @endif
+            </mj-raw>
+            <mj-clear-php />
+        <mj-raw>
+            @endif
+        </mj-raw>
+        <mj-clear-php />
+
+        <mj-raw>
+            @if ($comments)
+        </mj-raw>
+            <mj-clear-php />
+
+            <mj-raw>
+                @if ($regarding === 'Programs Inquiry' && $program === 'Unlimited Wash Club' && $washClubInquiryType === 'Club Change' && $washClubChangeAction === 'Change Membership')
+            </mj-raw>
+            <mj-text padding-bottom="0" padding-top="0"><b>Reason for Change</b>:</mj-text>
+            <mj-raw>
+                @else
+            </mj-raw>
+            <mj-text padding-bottom="0" padding-top="20px"><b>Comments</b>:</mj-text>
+            <mj-raw>
+                @endif
+            </mj-raw>
+
+            <mj-text padding-top="0" padding-bottom="20px">{{ $comments }}</mj-text>
+        <mj-raw>
+            @endif
+        </mj-raw>
+      </mj-column>
+    </mj-section>
+    <mj-include path="./partials/footer-internal.mjml" />
+
+  </mj-body>
+
+</mjml>

@@ -1,0 +1,48 @@
+.featherlight {
+    background: rgba(0, 0, 0, 0.8);
+
+    .featherlight-content {
+        background-color: transparent;
+    }
+
+    &.splash .featherlight-content {
+        width: auto;
+        max-width: none;
+    }
+    z-index: 1147483647; // Adjusted here to fix recapcha issue
+}
+.featherlight .featherlight-close-icon {
+    top: 25px;
+    right: 25px;
+}
+.popup {
+    background-color: #fff;
+    display: none;
+    max-width: 50rem;
+    margin: auto;
+    padding: 2rem;
+    .field-wrapper {
+        max-width: none;
+    }
+    &__title {
+        color: $c-blue-dark;
+        font-size: 2.4rem;
+        font-weight: $weight-bold;
+        &--large {
+            font-size: 3rem;
+        }
+        &--black {
+            color: $c-black;
+        }
+    }
+    &.splash-popup {
+        img {
+            max-width: 80vw;
+            max-height: 80vh;
+            width: 100%;
+        }
+    }
+    &--wide {
+        max-width: 64rem;
+    }
+}

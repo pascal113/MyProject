@@ -1,0 +1,81 @@
+    <mj-section background-color="#fff" padding-bottom="0">
+      <mj-column width="600px" border-top="1px solid #c0c4ca" border-bottom="1px solid #c0c4ca">
+        <mj-text font-size="17px"><strong>Order Number:</strong> {{ $order->id }}  |  <strong>Order Date:</strong> {{ \Carbon\Carbon::parse($order->created_at)->format(config('format.date')) }}</mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-raw>@foreach ($order->products as $product)</mj-raw>
+        <mj-raw>
+            @php
+                $suffix = null;
+                if (($product->pivot->variant->name ?? null) === 'Monthly') {
+                    $suffix = ' / month';
+                }elseif (($product->pivot->variant->name ?? null) === 'Yearly') {
+                    $suffix = ' / year';
+                }elseif (($product->pivot->variant->name ?? null) === 'One Year') {
+                    $suffix = ' for one year';
+                }
+            @endphp
+        </mj-raw>
+
+        <mj-section mj-class="order-section">
+            <mj-column width="60%">
+                <mj-text mj-class="th">Item</mj-text>
+                <mj-text font-weight="bold" padding="0 10px 0 0" font-size="16px">{{ $product->getNameWithTerm($product, $product->pivot->variant ?? null) }}</mj-text>
+
+                <mj-raw>@if ($product->pivot->modification)</mj-raw>
+                    <mj-text padding="2px 0 5px 0" font-style="italic" font-family="Roboto, sans-serif" font-size="14px">Club change occurs {{ ($product->pivot->modification->executes_at ?? null) ? \Carbon\Carbon::parse($product->pivot->modification->executes_at)->format(config('format.date')) : 'in the future' }}</mj-text>
+                <mj-raw>@endif</mj-raw>
+                <mj-clear-php />
+                <mj-raw>@if ($product->is_wash_club && $product->pivot->membership_details_url)</mj-raw>
+                    <mj-text padding="0 10px 0 0" font-size="12px">
+                        <a style="color:#004b8d;display:block;margin-right:5px;text-decoration:none;font-weight:bold;line-height:17px;" href="{{ $product->pivot->membership_details_url }}">Wash Club Details</a>
+                        <mj-raw>@if ($product->pivot->membership_purchase->certificate_url ?? null)</mj-raw>
+                            <a style="color:#004b8d;display:block;margin-right:5px;text-decoration:none;font-weight:bold;line-height:17px;" href="{{ $product->pivot->membership_purchase->certificate_url }}">Print Certificate PDF</a>
+                        <mj-raw>@endif</mj-raw>
+                    </mj-text>
+                <mj-raw>@endif</mj-raw>
+            </mj-column>
+            <mj-column width="25%">
+                <mj-text mj-class="th">Quantity</mj-text>
+                <mj-text mj-class="td">{{ $product->pivot->qty }}</mj-text>
+            </mj-column>
+            <mj-column width="15%">
+                <mj-text mj-class="th">Price</mj-text>
+                <mj-raw>@if ($product->pivot->discount > 0)</mj-raw>
+                <mj-text mj-class="td"><strike>${{ number_format($product->pivot->pre_discount_sub_total / 100, 2) }}</strike></mj-text>
+                <mj-text mj-class="td"><span style="font-size:14px; font-weight: normal; color:#666">(${{ number_format($product->pivot->sub_total / 100, 2) }})</span></mj-text>
+                <mj-raw>@else</mj-raw>
+                <mj-text mj-class="td">${{ number_format($product->pivot->sub_total / 100, 2) }}</mj-text>
+                <mj-raw>@endif</mj-raw>
+                <mj-clear-php />
+            </mj-column>
+        </mj-section>
+    <mj-raw>@endforeach</mj-raw>
+    <mj-section background-color="#fff"border-bottom="1px solid #c0c4ca" padding-left="25px" padding-right="25px">
+        <mj-column width="85%">
+            <mj-raw>@if ($order->discount > 0)</mj-raw>
+                <mj-text mj-class="txt-sm" padding="0 10px 0 0">Merchandise Total</mj-text>
+                <mj-text mj-class="txt-sm" padding="0 10px 0 0">Discount Total</mj-text>
+            <mj-raw>@endif</mj-raw>
+            <mj-text padding="0 10px 0 0">Subotal</mj-text>
+            <mj-text mj-class="txt-sm" padding="0 10px 0 0">Shipping</mj-text>
+            <mj-text mj-class="txt-sm" padding="0 10px 0 0">Tax</mj-text>
+        </mj-column>
+        <mj-column width="15%">
+            <mj-raw>@if ($order->discount > 0)</mj-raw>
+            <mj-text mj-class="txt-sm" padding="0 10px 0 0"><strike>${{ number_format($order->sub_total + $order->discount, 2) }}</strike></mj-text>
+            <mj-text mj-class="txt-sm" padding="0 10px 0 0">-${{ number_format($order->discount, 2) }}</mj-text>
+            <mj-raw>@endif</mj-raw>
+            <mj-text padding="0 10px 0 0">${{ number_format($order->sub_total, 2) }}</mj-text>
+            <mj-text mj-class="txt-sm" padding="0 10px 0 0">${{ number_format($order->shipping_price, 2) }}</mj-text>
+            <mj-text mj-class="txt-sm" padding="0 10px 0 0">${{ number_format($order->tax, 2) }}</mj-text>
+        </mj-column>
+    </mj-section>
+    <mj-section background-color="#ecedf0"border-bottom="2px solid #c0c4ca" padding="15px 25px 15px 25px">
+        <mj-column width="85%">
+            <mj-text mj-class="total" padding="0 10px 0 0">Total</mj-text>
+        </mj-column>
+        <mj-column width="15%">
+            <mj-text mj-class="total" padding="0 10px 0 0">${{ number_format($order->total, 2) }}</mj-text>
+        </mj-column>
+    </mj-section>

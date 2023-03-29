@@ -1,0 +1,28 @@
+<mjml>
+
+    <mj-head>
+        <mj-include path="./partials/styles.mjml" />
+    </mj-head>
+
+    <mj-body background-color="#fff">
+
+        <mj-include path="./partials/header.mjml" />
+
+        <mj-section background-color="#fff" padding-bottom="0">
+            <mj-column width="600px">
+                <mj-text>The <b>{{ $unpublishedPageTitle }}</b> page has been un-published, which broke links to that page. The following pages have been affected by this:</mj-text>
+                <mj-text>
+                    <mj-raw>
+                        <ul>
+                            @foreach($affectedPages as $page)
+                                <li><a href="{{ URL::to(\FPCS\FlexiblePageCms\Services\CmsRoute::getPathByPage($page)) }}" >{{ $page->title }} </a> (<a href="{{ URL::to('/admin/pages/'. $page->id .'/edit') }}" >Edit this page</a>)</li>
+                            @endforeach
+                        </ul>
+                    </mj-raw>
+                </mj-text>
+            </mj-column>
+        </mj-section>
+        <mj-include path="./partials/footer-internal.mjml" />
+    </mj-body>
+
+</mjml>

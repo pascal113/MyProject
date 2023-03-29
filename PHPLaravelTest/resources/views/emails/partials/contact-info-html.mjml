@@ -1,0 +1,15 @@
+    <mj-section background-color="#fff">
+      <mj-column width="600px" padding-bottom="30px">
+        <mj-text font-size="20px" font-weight="bold" padding-bottom="5px" padding-top="20px">Thanks!</mj-text>
+        <mj-text color="#004b8d" font-size="24px" padding-top="0" font-weight="bold">
+          The Brown Bear Car Wash Team
+        </mj-text>
+        <mj-text>
+          <a style="color:#000000;" href="tel:2067893700"> 206.789.3700</a><br />(Monday – Friday 8am - 4pm)
+        </mj-text>
+        <mj-text>
+          <strong>Visit:</strong> <a href="{{ url('/') }}" style="color:#000">www.brownbear.com</a><br />
+          <strong>Email:</strong> <a href="mailto:{{ config('mail.contact.address') }}" style="color:#000">{{ config('mail.contact.address') }}</a>
+        </mj-text>
+      </mj-column>
+    </mj-section>

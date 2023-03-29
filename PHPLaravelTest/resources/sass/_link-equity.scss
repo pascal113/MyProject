@@ -1,0 +1,14 @@
+.be-ix-link-block {
+    background: #e0e0e0 !important;
+}
+.be-ix-link-block .be-related-link-container .be-list .be-list-item {
+    font-size: 16px !important;
+    a {
+        color: $c-black;
+    }
+}
+.be-ix-link-block .be-related-link-container .be-label {
+    font-size: 16px !important;
+    flex-basis: 110px !important;
+    font-weight: 400 !important;
+}

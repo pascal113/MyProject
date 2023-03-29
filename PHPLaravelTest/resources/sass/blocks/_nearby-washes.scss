@@ -1,0 +1,9 @@
+.block-nearby-washes {
+    background: $c-gray-bgr;
+    padding: 0 $base-spacing;
+    &__content {
+        max-width: $width-xl;
+        margin: auto;
+        padding: $section-spacing 0;
+    }
+}

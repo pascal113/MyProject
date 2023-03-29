@@ -1,0 +1,9 @@
+<mj-section background-color="#e3e4e6">
+  <mj-column>
+    <mj-text color="#666666" font-size="15px" align="center">Brown Bear Car Wash, A Car Wash Enterprises, Inc. Company, 3977 Leary Way NW, Seattle, Washington 98107</mj-text>
+
+    <mj-text color="#666666" font-size="13px" align="center">Copyright <sup>©</sup> {{ date('Y') }} Car Wash Enterprises, Inc..</mj-text>
+    </mj-text>
+  </mj-column>
+
+</mj-section>

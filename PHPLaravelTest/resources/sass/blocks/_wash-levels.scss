@@ -1,0 +1,62 @@
+.block-wash-level {
+    border-top: 1px solid $base-border-color;
+    padding: $base-spacing 0;
+    &:last-of-type {
+        border-bottom: 1px solid $base-border-color;
+    }
+    &__content {
+        display: none;
+        text-align: left;
+    }
+    ul {
+        max-width: 46rem;
+        font-size: 2rem;
+        li {
+            margin-bottom: $base-spacing/2;
+        }
+    }
+    &__sponsors {
+        img {
+            display: block;
+            margin: $base-spacing;
+        }
+    }
+    &__title {
+        color: $c-blue-dark;
+        cursor: pointer;
+        margin: 0;
+        text-align: center;
+    }
+    &.is-active {
+        .block-wash-level__content {
+            display: block;
+            @include large {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+        .plus-minus-icon {
+            &:before {
+                content: '\2212';
+            }
+        }
+    }
+}
+.plus-minus-icon {
+    color: $c-blue-dark;
+    background: transparent;
+    border: none;
+    font-size: 3rem;
+    float: right;
+    text-align: center;
+    width: 15px;
+    height: 15px;
+    position: relative;
+    font-style: normal;
+    &:before {
+        content: '\002B';
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+}

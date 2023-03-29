@@ -1,0 +1,18 @@
+.block-images-linked {
+    @include container;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    > div {
+        display: flex;
+        align-items: center;
+        padding: $base-spacing/2;
+        img {
+            width: 100%;
+        }
+    }
+    @include large {
+        justify-content: space-between;
+    }
+}

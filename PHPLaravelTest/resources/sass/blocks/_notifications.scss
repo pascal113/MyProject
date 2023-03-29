@@ -1,0 +1,59 @@
+.notifications {
+    background-size: 5rem 5rem;
+    background-position: 2rem 2rem;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2rem 2rem 2rem 9rem;
+    text-align: left;
+    margin-bottom: 2rem;
+    min-height: 9rem;
+    ul {
+        padding-left: 0;
+    }
+    &--success {
+        background-color: #bfe2bd;
+        background-image: url(/images/notifications/Success.svg);
+        strong {
+            color: #339900;
+        }
+    }
+    &--error {
+        background-color: #ffcccc;
+        background-image: url(/images/notifications/Error.svg);
+        strong {
+            color: $c-red;
+        }
+    }
+    &--warning {
+        background-color: #ffffcc;
+        background-image: url(/images/notifications/Warning.svg);
+        strong {
+            color: #ff9900;
+        }
+    }
+    &--info {
+        background-color: #b5d8e5;
+        background-image: url(/images/notifications/Info.svg);
+        strong {
+            color: $c-blue-dark;
+        }
+    }
+
+    p.message {
+        font-size: 2.2rem;
+        margin-bottom: 0;
+    }
+
+    p.additional-info {
+        font-size: 2rem;
+        margin-top: 2rem;
+        margin-bottom: 0;
+    }
+
+    .button-row {
+        margin-bottom: 0;
+    }
+}
