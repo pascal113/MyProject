@@ -1,0 +1,32 @@
+{
+  "name": "jw-socket-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Raphael Wintrich",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "form-data": "^3.0.1",
+    "jsdom": "^16.5.3",
+    "mkdirp": "^0.5.5",
+    "process-list": "^2.0.0",
+    "ps-node": "^0.1.6",
+    "puppeteer": "^5.5.0",
+    "puppeteer-extra": "^3.1.16",
+    "puppeteer-extra-plugin-adblocker": "^2.11.10",
+    "puppeteer-extra-plugin-recaptcha": "^3.4.0",
+    "puppeteer-extra-plugin-stealth": "^2.7.8",
+    "sharp": "^0.23.4",
+    "socket.io": "^2.4.1",
+    "yargs": "^14.2.3"
+  },
+  "devDependencies": {}
+}
